@@ -382,8 +382,7 @@
 - (void)setMIDIInput:(PYMIDIEndpoint*)endpoint
 {
     [currentMIDIEndpoint removeReceiver:self];
-    [currentMIDIEndpoint autorelease];
-    currentMIDIEndpoint = [endpoint retain];
+    currentMIDIEndpoint = endpoint;
     [currentMIDIEndpoint addReceiver:self];
 }
 

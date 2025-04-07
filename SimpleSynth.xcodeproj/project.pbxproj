@@ -13,27 +13,27 @@
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		C19A5E4D0A371D9900F0B199 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = C1FDC6970A2DE10300C94DEA /* Credits.html */; };
 		C1FDC5760A2DD88200C94DEA /* NSStringFSSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FDC56B0A2DD88200C94DEA /* NSStringFSSpec.m */; };
-		C1FDC5770A2DD88200C94DEA /* InstrumentsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FDC56D0A2DD88200C94DEA /* InstrumentsDataSource.m */; };
 		C1FDC5780A2DD88200C94DEA /* ChannelsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FDC56F0A2DD88200C94DEA /* ChannelsDataSource.m */; };
 		C1FDC5790A2DD88200C94DEA /* GaugeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FDC5700A2DD88200C94DEA /* GaugeView.m */; };
 		C1FDC57A0A2DD88200C94DEA /* SynthController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FDC5740A2DD88200C94DEA /* SynthController.m */; };
 		C1FDC57B0A2DD88200C94DEA /* AudioSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FDC5750A2DD88200C94DEA /* AudioSystem.m */; };
-		C1FDC5960A2DD8CD00C94DEA /* PYMIDIEndpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FDC5810A2DD8CD00C94DEA /* PYMIDIEndpoint.m */; };
-		C1FDC5970A2DD8CD00C94DEA /* PYMIDIEndpointDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FDC5830A2DD8CD00C94DEA /* PYMIDIEndpointDescriptor.m */; };
-		C1FDC5980A2DD8CD00C94DEA /* PYMIDIEndpointSet.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FDC5850A2DD8CD00C94DEA /* PYMIDIEndpointSet.m */; };
-		C1FDC5990A2DD8CD00C94DEA /* PYMIDIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FDC5870A2DD8CD00C94DEA /* PYMIDIManager.m */; };
-		C1FDC59A0A2DD8CD00C94DEA /* PYMIDIRealDestination.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FDC5890A2DD8CD00C94DEA /* PYMIDIRealDestination.m */; };
-		C1FDC59B0A2DD8CD00C94DEA /* PYMIDIRealEndpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FDC58B0A2DD8CD00C94DEA /* PYMIDIRealEndpoint.m */; };
-		C1FDC59C0A2DD8CD00C94DEA /* PYMIDIRealSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FDC58D0A2DD8CD00C94DEA /* PYMIDIRealSource.m */; };
-		C1FDC59D0A2DD8CD00C94DEA /* PYMIDIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FDC58F0A2DD8CD00C94DEA /* PYMIDIUtils.m */; };
-		C1FDC59E0A2DD8CD00C94DEA /* PYMIDIVirtualDestination.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FDC5910A2DD8CD00C94DEA /* PYMIDIVirtualDestination.m */; };
-		C1FDC59F0A2DD8CD00C94DEA /* PYMIDIVirtualEndpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FDC5930A2DD8CD00C94DEA /* PYMIDIVirtualEndpoint.m */; };
-		C1FDC5A00A2DD8CD00C94DEA /* PYMIDIVirtualSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FDC5950A2DD8CD00C94DEA /* PYMIDIVirtualSource.m */; };
+		C1FDC5960A2DD8CD00C94DEA /* PYMIDIEndpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FDC5810A2DD8CD00C94DEA /* PYMIDIEndpoint.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C1FDC5970A2DD8CD00C94DEA /* PYMIDIEndpointDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FDC5830A2DD8CD00C94DEA /* PYMIDIEndpointDescriptor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C1FDC5980A2DD8CD00C94DEA /* PYMIDIEndpointSet.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FDC5850A2DD8CD00C94DEA /* PYMIDIEndpointSet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C1FDC5990A2DD8CD00C94DEA /* PYMIDIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FDC5870A2DD8CD00C94DEA /* PYMIDIManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C1FDC59A0A2DD8CD00C94DEA /* PYMIDIRealDestination.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FDC5890A2DD8CD00C94DEA /* PYMIDIRealDestination.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C1FDC59B0A2DD8CD00C94DEA /* PYMIDIRealEndpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FDC58B0A2DD8CD00C94DEA /* PYMIDIRealEndpoint.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C1FDC59C0A2DD8CD00C94DEA /* PYMIDIRealSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FDC58D0A2DD8CD00C94DEA /* PYMIDIRealSource.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C1FDC59D0A2DD8CD00C94DEA /* PYMIDIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FDC58F0A2DD8CD00C94DEA /* PYMIDIUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C1FDC59E0A2DD8CD00C94DEA /* PYMIDIVirtualDestination.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FDC5910A2DD8CD00C94DEA /* PYMIDIVirtualDestination.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C1FDC59F0A2DD8CD00C94DEA /* PYMIDIVirtualEndpoint.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FDC5930A2DD8CD00C94DEA /* PYMIDIVirtualEndpoint.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C1FDC5A00A2DD8CD00C94DEA /* PYMIDIVirtualSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FDC5950A2DD8CD00C94DEA /* PYMIDIVirtualSource.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C1FDC5EB0A2DDCCB00C94DEA /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1FDC5E90A2DDCCB00C94DEA /* AudioUnit.framework */; };
 		C1FDC5EC0A2DDCCB00C94DEA /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1FDC5EA0A2DDCCB00C94DEA /* CoreAudio.framework */; };
 		C1FDC5EE0A2DDCFD00C94DEA /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1FDC5ED0A2DDCFD00C94DEA /* CoreMIDI.framework */; };
 		C1FDC62A0A2DDD9900C94DEA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1FDC6290A2DDD9900C94DEA /* AudioToolbox.framework */; };
 		C1FDC6800A2DE0A400C94DEA /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = C1FDC67F0A2DE0A400C94DEA /* AppIcon.icns */; };
+		C9F858C52DA44433002DC18C /* InstrumentsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F858C42DA44433002DC18C /* InstrumentsDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,8 +50,6 @@
 		C1FDC56A0A2DD88200C94DEA /* SynthController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = SynthController.h; sourceTree = "<group>"; };
 		C1FDC56B0A2DD88200C94DEA /* NSStringFSSpec.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = NSStringFSSpec.m; sourceTree = "<group>"; };
 		C1FDC56C0A2DD88200C94DEA /* NSStringFSSpec.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = NSStringFSSpec.h; sourceTree = "<group>"; };
-		C1FDC56D0A2DD88200C94DEA /* InstrumentsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = InstrumentsDataSource.m; sourceTree = "<group>"; };
-		C1FDC56E0A2DD88200C94DEA /* InstrumentsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = InstrumentsDataSource.h; sourceTree = "<group>"; };
 		C1FDC56F0A2DD88200C94DEA /* ChannelsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ChannelsDataSource.m; sourceTree = "<group>"; };
 		C1FDC5700A2DD88200C94DEA /* GaugeView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = GaugeView.m; sourceTree = "<group>"; };
 		C1FDC5710A2DD88200C94DEA /* GaugeView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = GaugeView.h; sourceTree = "<group>"; };
@@ -88,6 +86,8 @@
 		C1FDC6290A2DDD9900C94DEA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = /System/Library/Frameworks/AudioToolbox.framework; sourceTree = "<absolute>"; };
 		C1FDC67F0A2DE0A400C94DEA /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AppIcon.icns; sourceTree = "<group>"; };
 		C1FDC6970A2DE10300C94DEA /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
+		C9F858C32DA44433002DC18C /* SimpleSynth-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleSynth-Bridging-Header.h"; sourceTree = "<group>"; };
+		C9F858C42DA44433002DC18C /* InstrumentsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentsDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,12 +234,12 @@
 		C1FDC6BB0A2DE25E00C94DEA /* Controller Classes */ = {
 			isa = PBXGroup;
 			children = (
-				C1FDC56E0A2DD88200C94DEA /* InstrumentsDataSource.h */,
-				C1FDC56D0A2DD88200C94DEA /* InstrumentsDataSource.m */,
 				C1FDC5720A2DD88200C94DEA /* ChannelsDataSource.h */,
 				C1FDC56F0A2DD88200C94DEA /* ChannelsDataSource.m */,
 				C1FDC56A0A2DD88200C94DEA /* SynthController.h */,
 				C1FDC5740A2DD88200C94DEA /* SynthController.m */,
+				C9F858C42DA44433002DC18C /* InstrumentsDataSource.swift */,
+				C9F858C32DA44433002DC18C /* SimpleSynth-Bridging-Header.h */,
 			);
 			name = "Controller Classes";
 			sourceTree = "<group>";
@@ -274,6 +274,11 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					8D1107260486CEB800E47090 = {
+						LastSwiftMigration = 1540;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SimpleSynth" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -331,7 +336,6 @@
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				C1FDC5760A2DD88200C94DEA /* NSStringFSSpec.m in Sources */,
-				C1FDC5770A2DD88200C94DEA /* InstrumentsDataSource.m in Sources */,
 				C1FDC5780A2DD88200C94DEA /* ChannelsDataSource.m in Sources */,
 				C1FDC5790A2DD88200C94DEA /* GaugeView.m in Sources */,
 				C1FDC57A0A2DD88200C94DEA /* SynthController.m in Sources */,
@@ -345,6 +349,7 @@
 				C1FDC59C0A2DD8CD00C94DEA /* PYMIDIRealSource.m in Sources */,
 				C1FDC59D0A2DD8CD00C94DEA /* PYMIDIUtils.m in Sources */,
 				C1FDC59E0A2DD8CD00C94DEA /* PYMIDIVirtualDestination.m in Sources */,
+				C9F858C52DA44433002DC18C /* InstrumentsDataSource.swift in Sources */,
 				C1FDC59F0A2DD8CD00C94DEA /* PYMIDIVirtualEndpoint.m in Sources */,
 				C1FDC5A00A2DD8CD00C94DEA /* PYMIDIVirtualSource.m in Sources */,
 			);
@@ -375,6 +380,7 @@
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -389,6 +395,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.notahat.SimpleSynth;
 				PRODUCT_NAME = SimpleSynth;
 				SDKROOT = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SimpleSynth-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};
@@ -397,6 +406,7 @@
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -411,6 +421,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.notahat.SimpleSynth;
 				PRODUCT_NAME = SimpleSynth;
 				SDKROOT = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SimpleSynth-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = NO;
 			};
@@ -420,6 +432,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -467,6 +480,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;

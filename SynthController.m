@@ -1,7 +1,5 @@
 #import "SynthController.h"
 #import <PYMIDI/PYMIDI.h>
-#import "InstrumentsDataSource.h"
-#import "ChannelsDataSource.h"
 
 
 @implementation SynthController
@@ -9,8 +7,6 @@
 
 - (void)awakeFromNib
 {
-    ChannelsDataSource* channelsDataSource;
-    InstrumentsDataSource* instrumentsDataSource;
     NSPoint origin;
     
     audioSystem = [[AudioSystem alloc] init];
@@ -24,9 +20,9 @@
     ];
 
     // This alloc/init pair is split over 2 lines to stop silly compiler warnings.
-    channelsDataSource = [ChannelsDataSource alloc];
-    channelsDataSource = [channelsDataSource initWithAudioSystem:audioSystem];
+    channelsDataSource = [[ChannelsDataSource alloc] initWithAudioSystem:audioSystem];
     [channelsTable setDataSource:channelsDataSource];
+    
     [[NSNotificationCenter defaultCenter]
         addObserver:self selector:@selector(audioSystemInstrumentChanged:)
         name:@"instrumentChanged" object:audioSystem
@@ -39,7 +35,7 @@
     ];
     
     // volume slider values are percentage based
-    [audioSystem setVolume:50.0];
+    [audioSystem setVolume:10.0];
     [volumeSlider setFloatValue:[audioSystem getVolume]];
     
     // The following hardcoded values should really be dynamically pulled from the
@@ -70,7 +66,6 @@
     [mainWindow setFrameAutosaveName:@"MainWindowFrame"];
 
     uiUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateUI:) userInfo:nil repeats:YES];
-    [uiUpdateTimer retain];
 }
 
 
@@ -159,6 +154,9 @@
 {
     [audioSystem restoreAppleSounds];
     [soundSetTextField setStringValue:@"Apple DLS Sound Set"];
+    
+    [instrumentsDataSource setNeedsRefresh];
+    
     [channelsTable reloadData];
     [instrumentsTable reloadData];
     [channelsTable selectRow:0 byExtendingSelection:NO];
@@ -174,6 +172,7 @@
     if ([audioSystem openFile:filename]) {
         // Display the filename in our window
         [soundSetTextField setStringValue:[filename lastPathComponent]];
+        [instrumentsDataSource setNeedsRefresh];
         [channelsTable reloadData];
         [instrumentsTable reloadData];
         [self updateMIDIDetails];

@@ -2,7 +2,10 @@
 @class PYMIDIVirtualDestination;
 #import "GaugeView.h"
 #import "AudioSystem.h"
+#import <SimpleSynth-Swift.h>
 
+//#import "InstrumentsDataSource.h"
+#import "ChannelsDataSource.h"
 
 /*!
     @class		SynthController
@@ -27,6 +30,9 @@
 
     AudioSystem*				audioSystem;
     PYMIDIVirtualDestination*	virtualDestination;
+    
+    ChannelsDataSource* channelsDataSource;
+    InstrumentsDataSource* instrumentsDataSource;
 }
 
 - (void)awakeFromNib;

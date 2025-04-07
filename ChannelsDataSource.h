@@ -7,7 +7,7 @@
         This is the NSTableView data source for the table of MIDI channels
         and their current instruments.
 */
-@interface ChannelsDataSource : NSObject {
+@interface ChannelsDataSource : NSObject<NSTableViewDataSource> {
     AudioSystem* audioSystem;
 }
 

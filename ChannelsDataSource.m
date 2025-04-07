@@ -6,18 +6,9 @@
 
 - (id)initWithAudioSystem:(AudioSystem*)newAudioSystem
 {
-    [newAudioSystem retain];
-    
     audioSystem = newAudioSystem;
     
     return self;
-}
-
-
-- (void)dealloc
-{
-    [audioSystem release];
-    [super dealloc];
 }
 
 
