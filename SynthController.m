@@ -355,7 +355,6 @@
     [self updateInstrumentSelection];
     isProgrammaticInstrumentChange = false;
     
-    [[NSUserDefaults standardUserDefaults] set]
 }
 
 - (IBAction)focusSearch:(id)sender {
