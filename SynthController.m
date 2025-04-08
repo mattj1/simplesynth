@@ -3,15 +3,20 @@
 
 
 @implementation SynthController
-
+{
+    bool isProgrammaticInstrumentChange;
+}
 
 - (void)awakeFromNib
 {
+    isProgrammaticInstrumentChange = false;
+    
     NSPoint origin;
     
     audioSystem = [[AudioSystem alloc] init];
     
     virtualDestination = [[PYMIDIVirtualDestination alloc] initWithName:@"SimpleSynth virtual input"];
+       
     
     [self buildMIDIInputPopUp];
     [[NSNotificationCenter defaultCenter]
@@ -48,6 +53,8 @@
     
     instrumentsDataSource = [[InstrumentsDataSource alloc] initWithAudioSystem:audioSystem];
     [instrumentsTable setDataSource:instrumentsDataSource];
+    instrumentsTable.allowsEmptySelection = true;
+    
     [[NSNotificationCenter defaultCenter]
         addObserver:self selector:@selector(instrumentsTableSelectionChanged:)
         name:@"NSTableViewSelectionDidChangeNotification" object:instrumentsTable
@@ -66,8 +73,19 @@
     [mainWindow setFrameAutosaveName:@"MainWindowFrame"];
 
     uiUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateUI:) userInfo:nil repeats:YES];
+    
+    [self setDefaultInstruments];
+
 }
 
+
+- (void) setDefaultInstruments {
+    for(int i = 0; i < 16; i++) {
+        int instIndex = [instrumentsDataSource instrumentAtRowIndex:1];
+        MusicDeviceInstrumentID instrumentID = [audioSystem instrumentIDAtIndex:instIndex];
+        [audioSystem setInstrument:instrumentID forChannel:i];
+    }
+}
 
 - (void)updateUI:(NSTimer*)timer
 {
@@ -153,6 +171,8 @@
 - (IBAction)restoreAppleSounds:(id)sender
 {
     [audioSystem restoreAppleSounds];
+    [self setDefaultInstruments];
+    
     [soundSetTextField setStringValue:@"Apple DLS Sound Set"];
     
     [instrumentsDataSource setNeedsRefresh];
@@ -170,6 +190,8 @@
 - (BOOL)application:(NSApplication*)theApplication openFile:(NSString*)filename
 {
     if ([audioSystem openFile:filename]) {
+        [self setDefaultInstruments];
+        
         // Display the filename in our window
         [soundSetTextField setStringValue:[filename lastPathComponent]];
         [instrumentsDataSource setNeedsRefresh];
@@ -215,40 +237,61 @@
 
 - (void)channelsTableSelectionChanged:(NSNotification*)notification
 {
+    isProgrammaticInstrumentChange = true;
     [self updateInstrumentSelection];
+    isProgrammaticInstrumentChange = false;
 }
 
 
 - (void)updateInstrumentSelection
 {
-    UInt32 channel = [channelsTable selectedRow];
-	MusicDeviceInstrumentID channelInstrumentID = [audioSystem currentInstrumentOnChannel:channel];
-	UInt32 instrumentIndex = [audioSystem indexOfInstrumentID:channelInstrumentID];
-	[instrumentsTable selectRow:instrumentIndex byExtendingSelection:NO];
+    NSInteger channel = [channelsTable selectedRow];
+    
+	MusicDeviceInstrumentID channelInstrumentID = [audioSystem currentInstrumentOnChannel:(int) channel];
+    
+    NSInteger rowIndex = [instrumentsDataSource rowNumberForInstrumentID:channelInstrumentID];
+    
+//    NSLog(@"updateInstrumentSelection: %d", rowIndex);
+    
+    if(rowIndex == -1) {
+        [instrumentsTable deselectRow:instrumentsTable.selectedRow];
+    } else {
+        [instrumentsTable selectRow:rowIndex byExtendingSelection:NO];
+    }
 }
 
 
 - (void)instrumentsTableSelectionChanged:(NSNotification*)notification
 {
     int channel = [channelsTable selectedRow];
-    int instrumentIndex = [instrumentsTable selectedRow];
-    MusicDeviceInstrumentID instrumentID = [audioSystem instrumentIDAtIndex:instrumentIndex];
     
-    [self updateMIDIDetails];
+    int selectedRow = instrumentsTable.selectedRow;
     
-    [audioSystem setInstrument:instrumentID forChannel:channel];
+    if(selectedRow != -1) {
+        int instrumentIndex = [instrumentsDataSource instrumentAtRowIndex:[instrumentsTable selectedRow]];
+        
+        MusicDeviceInstrumentID instrumentID = [audioSystem instrumentIDAtIndex:instrumentIndex];
+        
+        [self updateMIDIDetails];
+        
+        if(!isProgrammaticInstrumentChange) {
+            [audioSystem setInstrument:instrumentID forChannel:channel];
+        }
+    }
 }
 
 
 - (void)updateMIDIDetails
 {
-    int instrumentIndex = [instrumentsTable selectedRow];
-    MusicDeviceInstrumentID instrumentID = [audioSystem instrumentIDAtIndex:instrumentIndex];
-    MIDIInstrument instrument = [AudioSystem instrumentIDToInstrument:instrumentID];
-    
-    [programNumberField setIntValue:instrument.programChange + 1];
-    [bankSelectMSBField setIntValue:instrument.bankSelectMSB];
-    [bankSelectLSBField setIntValue:instrument.bankSelectLSB];
+    NSInteger instrumentIndex = [instrumentsTable selectedRow];
+    if(instrumentIndex >= 0) {
+        MusicDeviceInstrumentID instrumentID = [audioSystem instrumentIDAtIndex:(UInt32) instrumentIndex];
+        MIDIInstrument instrument = [AudioSystem instrumentIDToInstrument:instrumentID];
+        
+        [programNumberField setIntValue:instrument.programChange + 1];
+        [bankSelectMSBField setIntValue:instrument.bankSelectMSB];
+        [bankSelectLSBField setIntValue:instrument.bankSelectLSB];
+    }
 }
 
 
@@ -302,5 +345,22 @@
     ]];
 }
 
+- (void) controlTextDidChange:(NSNotification *)obj {
+    NSSearchField *field = obj.object;
+    [instrumentsDataSource setSearchText: field.stringValue];
+    
+    [instrumentsTable reloadData];
+    
+    isProgrammaticInstrumentChange = true;
+    [self updateInstrumentSelection];
+    isProgrammaticInstrumentChange = false;
+    
+    [[NSUserDefaults standardUserDefaults] set]
+}
+
+- (IBAction)focusSearch:(id)sender {
+    [instrumentsDrawer open];
+    [searchField becomeFirstResponder];
+}
 
 @end

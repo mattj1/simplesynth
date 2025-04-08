@@ -11,7 +11,7 @@
     @class		SynthController
         This is the main controller for the application.
 */
-@interface SynthController : NSObject
+@interface SynthController : NSObject<NSSearchFieldDelegate, NSTableViewDelegate>
 {
     IBOutlet NSWindow*		mainWindow;
     IBOutlet NSPopUpButton* midiInputPopup;
@@ -25,6 +25,8 @@
     IBOutlet NSSlider*		cutoffSlider;
     IBOutlet NSSlider*		volumeSlider;
     IBOutlet GaugeView*		cpuLoadGuage;
+    
+    IBOutlet NSSearchField  *searchField;
     
     NSTimer*					uiUpdateTimer;
 
@@ -63,4 +65,5 @@
 - (IBAction)visitWebSite:(id)sender;
 - (IBAction)sendFeedback:(id)sender;
 
+- (IBAction)focusSearch:(id)sender;
 @end

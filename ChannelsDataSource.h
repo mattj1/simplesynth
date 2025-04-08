@@ -12,7 +12,6 @@
 }
 
 - (id)initWithAudioSystem:(AudioSystem*)newAudioSystem;
-- (void)dealloc;
 
 - (int)numberOfRowsInTableView:(NSTableView*)tableView;
 - (id)tableView:(NSTableView*)tableView objectValueForTableColumn:(NSTableColumn*)column row:(int)rowIndex;
