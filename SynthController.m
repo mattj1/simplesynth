@@ -345,13 +345,16 @@
 
 - (void) controlTextDidChange:(NSNotification *)obj {
     NSSearchField *field = obj.object;
-    [instrumentsDataSource setSearchText: field.stringValue];
     
-    [instrumentsTable reloadData];
-    
-    isProgrammaticInstrumentChange = true;
-    [self updateInstrumentSelection];
-    isProgrammaticInstrumentChange = false;
+    if(field == searchField) {
+        [instrumentsDataSource setSearchText: field.stringValue];
+        
+        [instrumentsTable reloadData];
+        
+        isProgrammaticInstrumentChange = true;
+        [self updateInstrumentSelection];
+        isProgrammaticInstrumentChange = false;
+    }
     
 }
 

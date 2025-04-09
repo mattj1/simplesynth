@@ -10,6 +10,7 @@
     
     if (self) {
         value = 0.0;
+        self.clipsToBounds = YES;
     }
     
     return self;
