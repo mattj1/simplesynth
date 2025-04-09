@@ -61,13 +61,11 @@
     ];
     [self updateMIDIDetails];
     // We must delay opening the drawer until the window is visible
-    [instrumentsDrawer performSelector:@selector(open) withObject:nil afterDelay:0];
    
     if (![mainWindow setFrameUsingName:@"MainWindowFrame"]) {
         // Center our window, taking the width of the drawer into account.
         [mainWindow center];
         origin = [mainWindow frame].origin;
-        origin = NSMakePoint (origin.x - [instrumentsDrawer contentSize].width/2.0, origin.y);
         [mainWindow setFrameOrigin:origin];
     }
     [mainWindow setFrameAutosaveName:@"MainWindowFrame"];
@@ -358,7 +356,6 @@
 }
 
 - (IBAction)focusSearch:(id)sender {
-    [instrumentsDrawer open];
     [searchField becomeFirstResponder];
 }
 

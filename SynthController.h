@@ -17,7 +17,6 @@
     IBOutlet NSPopUpButton* midiInputPopup;
     IBOutlet NSTextField*	soundSetTextField;
     IBOutlet NSTableView*	channelsTable;
-    IBOutlet NSDrawer*		instrumentsDrawer;
     IBOutlet NSTableView*	instrumentsTable;
     IBOutlet NSTextField*	programNumberField;
     IBOutlet NSTextField*	bankSelectMSBField;
